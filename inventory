@@ -4,3 +4,4 @@
 [nodes:vars]
 ansible_user=non-prod-server
 ansible_private_key_file=~/.ssh/ansible_id_ed25519
+apache_package=apache2
