@@ -3,12 +3,9 @@
   become: true
   tasks:
 
-  - name: update repository index
-    apt:
+  - name: install latest apache package and run updates
+    package:
+      name:
+        - "{{ apache_package }}"
+      state: latest
       update_cache: yes
-    when: ansible_distribution in ["Ubuntu", "Debian"]
-
-  - name: install apache2 package
-    apt:
-      name: apache2
-    when: ansible_distribution in ["Ubuntu", "Debian"]
